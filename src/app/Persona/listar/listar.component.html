@@ -1,0 +1,47 @@
+<div class="content" role="main">
+  <div class="card seleccion">
+    <div class="card-header">
+      <h3>Personas</h3>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOMBRES</th>
+              <th scope="col">APELLIDOS</th>
+              <th scope="col">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-center"
+              *ngFor="let persona of Personas; let iControl = index"
+            >
+              <td>{{ persona.id }}</td>
+              <td>{{ persona.name }}</td>
+              <td>{{ persona.apellidos }}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning"
+                  routerLink="/edit/{{ persona.id }}"
+                >
+                  Editar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger mx-3"
+                  (click)="borrarRegistro(persona.id, iControl)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

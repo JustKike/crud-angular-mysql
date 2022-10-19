@@ -1,0 +1,53 @@
+<div class="content" role="main">
+  <div class="card seleccion">
+    <div class="card-header">
+      <h3>Agregar Personas</h3>
+    </div>
+    <div class="card-body">
+      <form
+        ngNativeValidate
+        [formGroup]="formularioDePersonas"
+        (ngSubmit)="enviarDatos()"
+      >
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder="Escribe el nombre"
+            formControlName="name"
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Apellidos</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder="Escribe los apellidos"
+            formControlName="apellidos"
+            autocomplete="off"
+          />
+        </div>
+        <div class="btn-group container" role="group" aria-label="">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="formularioDePersonas.invalid"
+          >
+            Agregar
+          </button>
+          <button type="button" routerLink="/listar" class="btn btn-primary">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
